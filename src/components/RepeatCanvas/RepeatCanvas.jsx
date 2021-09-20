@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Button from '../Button/Button';
+import './RepeatCanvas.scss';
 
 const RepeatCanvas = ({ images }) => {
   const canvasRef = useRef(null);
@@ -35,12 +36,14 @@ const RepeatCanvas = ({ images }) => {
   };
 
   return (
-    <>
-      <canvas width="600" height="900" ref={canvasRef} />
-      <Button title="Добавить" handler={insertHandler} />
-      <Button title="Удалить" handler={deleteHandler} />
-      <Button title="Дорисовать" handler={animationHandler} />
-    </>
+    <div className="container">
+      <canvas width="600" height="700" ref={canvasRef} />
+      <div className="toolbar">
+        <Button title="Добавить" handler={insertHandler} />
+        <Button title="Удалить" handler={deleteHandler} />
+        <Button title="Дорисовать" handler={animationHandler} />
+      </div>
+    </div>
   );
 };
 

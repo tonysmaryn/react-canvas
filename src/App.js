@@ -10,10 +10,10 @@ function App() {
     setImages([...images, image]);
   }
   return (
-    <>
+    <div className='wrapper'>
       <DrawingCanvas addScreen={addScreen} images={images} />
       <RepeatCanvas images={images} />
-    </>
+    </div>
   );
 }
 

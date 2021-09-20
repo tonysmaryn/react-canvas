@@ -45,7 +45,7 @@ const DrawingCanvas = ({ addScreen, images }) => {
     <>
       <canvas
         width="600"
-        height="900"
+        height="700"
         ref={canvasRef}
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}

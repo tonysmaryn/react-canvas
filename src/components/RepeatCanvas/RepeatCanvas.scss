@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 300px;
+    margin-left: 10px;
+}
