@@ -38,6 +38,8 @@ const DrawingCanvas = () => {
   return (
     <>
       <canvas
+        width="600"
+        height="900"
         ref={canvasRef}
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}

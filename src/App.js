@@ -1,3 +1,4 @@
+import './App.scss';
 import DrawingCanvas from "./components/DrawingCanvas/DrawingCanvas";
 
 function App() {
