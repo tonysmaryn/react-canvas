@@ -7,12 +7,18 @@ const RepeatCanvas = ({ images }) => {
   let currentImage = 0;
 
   const insertHandler = () => {
+    if (currentImage === images.length - 1) {
+      return;
+    }
     currentImage++;
     const context = canvasRef.current.getContext('2d');
     loadImg(context);
   };
 
   const deleteHandler = () => {
+    if (currentImage === 0) {
+      return;
+    }
     currentImage--;
     const context = canvasRef.current.getContext('2d');
     context.fillStyle = 'white';
@@ -21,6 +27,9 @@ const RepeatCanvas = ({ images }) => {
   };
 
   const animationHandler = () => {
+    if (currentImage === images.length - 1) {
+      return;
+    }
     const context = canvasRef.current.getContext('2d');
     const timer = setInterval(() => {
       currentImage++;
