@@ -11,7 +11,7 @@ function App() {
   }
   return (
     <>
-      <DrawingCanvas addScreen={addScreen} />
+      <DrawingCanvas addScreen={addScreen} images={images} />
       <RepeatCanvas />
     </>
   );

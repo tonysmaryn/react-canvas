@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const DrawingCanvas = ({ addScreen }) => {
+const DrawingCanvas = ({ addScreen, images }) => {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
@@ -15,6 +15,10 @@ const DrawingCanvas = ({ addScreen }) => {
   }, []);
 
   const startDrawing = ({ nativeEvent }) => {
+    if (images.length === 0) {
+      const img = canvasRef.current.toDataURL();
+      addScreen(img);
+    }
     const { offsetX, offsetY } = nativeEvent;
     contextRef.current.beginPath();
     contextRef.current.moveTo(offsetX, offsetY);
@@ -23,6 +27,8 @@ const DrawingCanvas = ({ addScreen }) => {
 
   const finishDrawing = () => {
     contextRef.current.closePath();
+    const img = canvasRef.current.toDataURL();
+    addScreen(img);
     setIsDrawing(false);
   };
 
