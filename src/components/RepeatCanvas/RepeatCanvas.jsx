@@ -18,6 +18,15 @@ const RepeatCanvas = ({ images }) => {
     loadImg(context);
   };
 
+  const animationHandler = () => {
+    const context = canvasRef.current.getContext('2d');
+    const timer = setInterval(() => {
+      currentImage++;
+      loadImg(context);
+      if (currentImage === images.length - 1) clearInterval(timer);
+    }, 700);
+  };
+
   const loadImg = (context) => {
     const img = new Image();
     img.src = images[currentImage];
@@ -29,6 +38,7 @@ const RepeatCanvas = ({ images }) => {
       <canvas width="600" height="900" ref={canvasRef} />
       <button onClick={() => insertHandler()}>Добавить</button>
       <button onClick={() => deleteHandler()}>Удалить</button>
+      <button onClick={() => animationHandler()}>Дорисовать</button>
     </>
   );
 };
