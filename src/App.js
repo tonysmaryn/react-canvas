@@ -1,6 +1,8 @@
+import DrawingCanvas from "./components/DrawingCanvas/DrawingCanvas";
+
 function App() {
   return (
-    <h1>Hello world</h1>
+    <DrawingCanvas />
   );
 }
 
